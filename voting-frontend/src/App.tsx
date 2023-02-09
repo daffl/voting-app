@@ -6,7 +6,13 @@ import { useFind } from 'figbird';
 import LinkListItem from './LinkListItem';
 
 function App() {
-  const { data } = useFind('links', {})
+  const { data } = useFind('links', {
+    query: {
+      $sort: {
+        votes: -1
+      }
+    }
+  })
   const links: Link[] = data || []
 
   return (

@@ -49,7 +49,7 @@ export const linkPatchValidator = getValidator(linkPatchSchema, dataValidator)
 export const linkPatchResolver = resolve<Link, HookContext>({})
 
 // Schema for allowed query properties
-export const linkQueryProperties = Type.Pick(linkSchema, ['link', 'title', 'description'])
+export const linkQueryProperties = Type.Pick(linkSchema, ['link', 'votes', 'title', 'description'])
 export const linkQuerySchema = Type.Intersect(
   [
     querySyntax(linkQueryProperties),
