@@ -14,12 +14,13 @@ export const linkSchema = Type.Object(
       format: 'uri'
     }),
     title: Type.String({
-      minLength: 5,
       maxLength: 100
     }),
-    description: Type.String({
-      maxLength: 500
-    }),
+    description: Type.Optional(
+      Type.String({
+        maxLength: 500
+      })
+    ),
     votes: Type.Integer()
   },
   { $id: 'Link', additionalProperties: false }
